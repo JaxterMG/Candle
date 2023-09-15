@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace Interactions.InteractiveObjects
 {
-    public class Key : MonoBehaviour
+    public class Key : PickableObject
     {
-        public string Name;
+        private void Start() 
+        {
+            Name = "Key";
+        }
     }
 }
