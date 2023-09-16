@@ -2,9 +2,9 @@ namespace Interactions.InteractiveObjects
 {
     public class Key : PickableObject
     {
-        private void Start() 
-        {
-            Name = "Key";
-        }
+        // private void Start() 
+        // {
+        //     Name = "Key";
+        // }
     }
 }

@@ -22,12 +22,14 @@ public class InteractionController : MonoBehaviour
             _currentTransform = hit.transform;
 
             hit.transform.TryGetComponent<IHint>(out IHint hintObject);
+            _cursorView.SetInteractive(true);
             string hint = hintObject?.GetHint();
             _cursorView.SetText(hint);
         }
         else
         {
             _currentTransform = null;
+            _cursorView.SetInteractive(false);
             _cursorView.SetText(string.Empty);
         }
     }
