@@ -1,5 +1,6 @@
 using Interactions;
 using UnityEngine;
+using Zenject;
 
 public class InteractionController : MonoBehaviour
 {
@@ -9,8 +10,8 @@ public class InteractionController : MonoBehaviour
     [SerializeField] private Transform _cameraTransform;
     private Transform _currentTransform = null;
 
-    //Вьюшка прицела и текста через zenject?
-    
+    [Inject] private CursorView _cursorView;
+
     void Update()
     {
         Ray ray = new Ray(_cameraTransform.position, _cameraTransform.forward);
@@ -21,11 +22,13 @@ public class InteractionController : MonoBehaviour
             _currentTransform = hit.transform;
 
             hit.transform.TryGetComponent<IHint>(out IHint hintObject);
-            hintObject?.GetHint();
+            string hint = hintObject?.GetHint();
+            _cursorView.SetText(hint);
         }
         else
         {
             _currentTransform = null;
+            _cursorView.SetText(string.Empty);
         }
     }
 

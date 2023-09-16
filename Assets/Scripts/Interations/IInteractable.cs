@@ -6,7 +6,7 @@ namespace Interactions
     }
     public interface IHint
     {
-        public void GetHint();
+        public string GetHint();
     }
     public interface IPickable
     {

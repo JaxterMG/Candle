@@ -6,9 +6,10 @@ namespace Interactions.InteractiveObjects
     {
         public string Name;
         protected Transform _transform => transform;
-        public void GetHint()
+        public string GetHint()
         {
             Debug.Log($"This is {Name}");
+            return Name;
         }
 
         public virtual void PickUp()
