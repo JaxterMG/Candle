@@ -1,34 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
     public float rotateSpeed;
 
-    private SimpleControls m_Controls;
+    [Inject] private SimpleControls _controls;
     private Vector2 m_Rotation;
-
-    public void Awake()
-    {
-        m_Controls = new SimpleControls();
-    }
-
     public void OnEnable()
     {
-        m_Controls.Enable();
+        _controls.Enable();
     }
 
     public void OnDisable()
     {
-        m_Controls.Disable();
+        _controls.Disable();
     }
 
     public void Update()
     {
-        var look = m_Controls.gameplay.look.ReadValue<Vector2>();
-        var move = m_Controls.gameplay.move.ReadValue<Vector2>();
+        var look = _controls.gameplay.look.ReadValue<Vector2>();
+        var move = _controls.gameplay.move.ReadValue<Vector2>();
 
         Look(look);
         Move(move);

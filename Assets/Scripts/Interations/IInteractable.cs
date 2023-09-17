@@ -10,6 +10,6 @@ namespace Interactions
     }
     public interface IPickable
     {
-        public void PickUp();
+        public void OnPickUp();
     }
 }

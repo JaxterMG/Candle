@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Interactions.InteractiveObjects
 {
-    public class PickableObject : MonoBehaviour, IHint, IPickable
+    public class IPickable : MonoBehaviour, IHint, Interactions.IPickable
     {
         public string Name;
         protected Transform _transform => transform;
@@ -12,9 +12,9 @@ namespace Interactions.InteractiveObjects
             return Name;
         }
 
-        public virtual void PickUp()
+        public virtual void OnPickUp()
         {
-            throw new System.NotImplementedException();
+            Debug.Log($"{Name} Picked up");
         }
     }
 }

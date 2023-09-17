@@ -1,6 +1,6 @@
 namespace Interactions.InteractiveObjects
 {
-    public class Key : PickableObject
+    public class Key : IPickable
     {
         // private void Start() 
         // {
