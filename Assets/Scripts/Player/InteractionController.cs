@@ -55,6 +55,11 @@ public class InteractionController : MonoBehaviour
 
     public void OnInteractButtonClick(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
+        if(_currentTransform.TryGetComponent<IInteractive>(out IInteractive interactiveObject))
+        {
+            interactiveObject.Interact();
+        }
+
         if(_currentTransform != null)
         {
             _currentTransform.TryGetComponent<IPickable>(out IPickable pickableObject);

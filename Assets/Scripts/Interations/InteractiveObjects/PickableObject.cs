@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Interactions.InteractiveObjects
 {
-    public class IPickable : MonoBehaviour, IHint, Interactions.IPickable
+    public class PickableObject : MonoBehaviour, IHint, IPickable
     {
         public string Name;
         protected Transform _transform => transform;
