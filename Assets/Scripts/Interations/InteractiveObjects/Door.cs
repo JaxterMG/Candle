@@ -24,7 +24,7 @@ namespace Interactions.InteractiveObjects
 
             if (!_isOpened)
             {
-                rotationValue = _startingRotation.y -90;
+                rotationValue = _startingRotation.y - 90;
             }
             else
             {
@@ -36,7 +36,7 @@ namespace Interactions.InteractiveObjects
             {
                 _currentTween.Stop();
             }
-            //_transform.Rotate(new Vector3(0, rotationValue,0));
+            
             _currentTween = Tween.Rotation(_transform, new Vector3(0, rotationValue, 0), 0.5f, Ease.Linear);
         }
         public string GetHint()
