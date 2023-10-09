@@ -32,8 +32,12 @@ namespace Interactions.InteractiveObjects
             }
 
             _isOpened = !_isOpened;
+            if(_currentTween.isAlive)
+            {
+                _currentTween.Stop();
+            }
             //_transform.Rotate(new Vector3(0, rotationValue,0));
-            Tween.Rotation(_transform, new Vector3(0, rotationValue, 0), 0.5f, Ease.Linear);
+            _currentTween = Tween.Rotation(_transform, new Vector3(0, rotationValue, 0), 0.5f, Ease.Linear);
         }
         public string GetHint()
         {
