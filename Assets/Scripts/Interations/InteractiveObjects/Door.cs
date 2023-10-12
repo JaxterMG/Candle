@@ -14,7 +14,7 @@ namespace Interactions.InteractiveObjects
         void Start()
         {
             _transform = transform;
-            _startingRotation = _transform.localEulerAngles;
+            _startingRotation = _transform.eulerAngles;
         }
 
         public void Interact()
