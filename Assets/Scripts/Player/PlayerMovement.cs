@@ -1,13 +1,17 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Zenject;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
     public float rotateSpeed;
+    [SerializeField] private Transform _camera;
 
     [Inject] private SimpleControls _controls;
-    private Vector2 m_Rotation;
+    private Vector2 _rotation;
+    int _deviceMultiplier = 1;
     public void OnEnable()
     {
         _controls.Enable();
@@ -40,10 +44,31 @@ public class PlayerMovement : MonoBehaviour
     {
         if (rotate.sqrMagnitude < 0.01)
             return;
+
         var scaledRotateSpeed = rotateSpeed * Time.deltaTime;
-        m_Rotation.y += rotate.x * scaledRotateSpeed;
-        m_Rotation.x = Mathf.Clamp(m_Rotation.x - rotate.y * scaledRotateSpeed, -89, 89);
-        transform.localEulerAngles = m_Rotation;
+
+        CalculateDeviceSensitivityMultiplier();
+
+        _rotation.y += rotate.x * scaledRotateSpeed * _deviceMultiplier;
+        _rotation.x = Mathf.Clamp(_rotation.x - rotate.y * scaledRotateSpeed * _deviceMultiplier, -89, 89);
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, _rotation.y, transform.localEulerAngles.z);
+        _camera.localEulerAngles = new Vector3(_rotation.x, _camera.localEulerAngles.y, _camera.localEulerAngles.z);
     }
+    private void CalculateDeviceSensitivityMultiplier()
+    {
+        InputControl control = _controls.gameplay.look.activeControl;
+
+        if (control != null)
+        {
+            if (control.device is Keyboard ||control.device is Mouse)
+            {
+                _deviceMultiplier = 1;
+            }
+            else if (control.device is Gamepad)
+            {
+                _deviceMultiplier = 40;
+            }
+        }
+    } 
 }
 
