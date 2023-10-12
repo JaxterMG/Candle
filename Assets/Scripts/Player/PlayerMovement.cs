@@ -54,6 +54,12 @@ public class PlayerMovement : MonoBehaviour
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, _rotation.y, transform.localEulerAngles.z);
         _camera.localEulerAngles = new Vector3(_rotation.x, _camera.localEulerAngles.y, _camera.localEulerAngles.z);
     }
+
+
+    // TODO: Перенести в отдельный класс, где будут прокидываться ивенты при смене устройств
+    /// <summary>
+    /// Позволяет понять, какое устройство сейчас используется
+    /// </summary>
     private void CalculateDeviceSensitivityMultiplier()
     {
         InputControl control = _controls.gameplay.look.activeControl;
