@@ -1,0 +1,9 @@
+newmtl ScratchesWalls
+map_Kd Scratches2.png
+Kd 1 1 1
+d 1
+
+newmtl Black
+Kd 0 0 0
+d 1
+
