@@ -6,6 +6,7 @@ using Zenject;
 
 public class InteractionController : MonoBehaviour
 {
+    [SerializeField] private Material _floorMat;
     [SerializeField] private float _interactionDistance = 10;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private Vector3 _raycastOffset;
@@ -29,6 +30,7 @@ public class InteractionController : MonoBehaviour
 
     void Update()
     {
+        _floorMat.SetVector("_Position", transform.position);
         CheckForInteractiveInView();
     }
     public void CheckForInteractiveInView()
