@@ -3050,7 +3050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &146667516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10230,7 +10230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BobSpeed: 3
   BobAmount: 0.02
-  DefaultSmoothTransition: 0.1
+  DefaultSmoothTransition: 0.02
   _camera: {fileID: 713720420}
 --- !u!114 &446095969
 MonoBehaviour:
@@ -10262,7 +10262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1533488988}
   _cameraOffset: {x: 0, y: 0.5, z: 0}
-  SmoothTime: 100
+  SmoothTime: 15
 --- !u!4 &447757108 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2680701173386091734, guid: 02012bed5aaed224387219928f227512,
