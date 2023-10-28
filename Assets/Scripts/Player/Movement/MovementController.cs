@@ -47,7 +47,6 @@ public class MovementController : MonoBehaviour
     private void GetMovementAxis()
     {
         var move = _controls.gameplay.move.ReadValue<Vector2>();
-        Debug.Log(move);
         var horizontalMovement = move.x;
         var verticalMovement = move.y;
 

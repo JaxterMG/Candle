@@ -19,16 +19,21 @@ public class HeadBob : MonoBehaviour
     private void FixedUpdate()
     {
         float movementSpeed = (transform.position - _lastPos).magnitude / Time.deltaTime;
+
         if (movementSpeed <= 0.01f)
         {
-            _camera.localPosition = Vector3.Lerp(_camera.localPosition, _originalPosition, DefaultSmoothTransition / Time.deltaTime);
-            _timer = 0f;
-            return;
+            // If the player's movement speed is very low (almost stopped), smooth the camera transition.
+            _camera.localPosition = Vector3.Lerp(_camera.localPosition, _originalPosition, Time.deltaTime * DefaultSmoothTransition);
+        }
+        else
+        {
+            // If the player is moving, apply the bobbing effect.
+            float yPos = _originalPosition.y + Mathf.Sin(_timer) * BobAmount;
+            _camera.localPosition = new Vector3(_originalPosition.x, yPos, _originalPosition.z);
+            _timer += BobSpeed * movementSpeed * Time.deltaTime;
         }
 
-        float yPos = _originalPosition.y + Mathf.Sin(_timer) * BobAmount;
-        _camera.localPosition = new Vector3(_originalPosition.x, yPos, _originalPosition.z);
-        _timer += BobSpeed * movementSpeed * Time.deltaTime;
+        // Update the last position for the next frame.
         _lastPos = transform.position;
     }
 }

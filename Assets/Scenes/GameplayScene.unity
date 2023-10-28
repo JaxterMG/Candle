@@ -10230,7 +10230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BobSpeed: 3
   BobAmount: 0.02
-  DefaultSmoothTransition: 0.02
+  DefaultSmoothTransition: 1
   _camera: {fileID: 713720420}
 --- !u!114 &446095969
 MonoBehaviour:
