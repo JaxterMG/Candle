@@ -10262,7 +10262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1533488988}
   _cameraOffset: {x: 0, y: 0.5, z: 0}
-  SmoothTime: 10
+  SmoothTime: 100
 --- !u!4 &447757108 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2680701173386091734, guid: 02012bed5aaed224387219928f227512,
