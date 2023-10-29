@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using SoundManager;
 
 public class ParticleSystemTrigger : MonoBehaviour
 {
@@ -16,6 +15,6 @@ public class ParticleSystemTrigger : MonoBehaviour
     private void EmitParticles()
     {
         _circleParticles.Play();
-        SoundManager.Instance.RequestSound("Call");
+        SoundManager.SoundManager.Instance.RequestSound("Call");
     }
 }
