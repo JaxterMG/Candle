@@ -1,14 +1,16 @@
 using Player.Inventory;
-using UnityEngine;
 using Zenject;
 
-public class GameplayInstaller : MonoInstaller
+namespace GameplayUI
 {
-   public override void InstallBindings()
+   public class GameplayInstaller : MonoInstaller
    {
-        Container.Bind<CursorView>().FromComponentInHierarchy().AsSingle();
-        Container.Bind<SimpleControls>().AsSingle();
-        Container.Bind<IInventory>().To<HandInventory>().AsSingle();
-        Container.Bind<InventoryController>().FromComponentInHierarchy().AsSingle();
+      public override void InstallBindings()
+      {
+         Container.Bind<CursorView>().FromComponentInHierarchy().AsSingle();
+         Container.Bind<SimpleControls>().AsSingle();
+         Container.Bind<IInventory>().To<HandInventory>().AsSingle();
+         Container.Bind<InventoryController>().FromComponentInHierarchy().AsSingle();
+      }
    }
 }

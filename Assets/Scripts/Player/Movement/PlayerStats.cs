@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+namespace Player.Movement
 {
-    public float MovementSpeed = 5;
-    public int JumpForce = 10;
+    public class PlayerStats : MonoBehaviour
+    {
+        public float MovementSpeed = 5;
+        public int JumpForce = 10;
+    }
 }

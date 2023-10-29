@@ -1,54 +1,56 @@
 using UnityEngine;
 
-
-public class SoundManager : MonoBehaviour
+namespace SoundManager
 {
-    private AudioSource[] _audioSources;
-    public SoundLibrary _soundLibrary;
-    public static SoundManager Instance;
-
-    private void Awake()
+    public class SoundManager : MonoBehaviour
     {
-        Instance = this;
-        _audioSources = GetComponents<AudioSource>();
-    }
+        private AudioSource[] _audioSources;
+        public SoundLibrary _soundLibrary;
+        public static SoundManager Instance;
 
-    public void RequestSound(string soundName)
-    {
-        var source = ChooseUnoccupiedSource();
-        var clip = FindClip(soundName);
-        PlaySound(source, clip);
-    }
-
-    private AudioSource ChooseUnoccupiedSource()
-    {
-        foreach (var source in _audioSources)
+        private void Awake()
         {
-            if (!source.isPlaying) return source;
+            Instance = this;
+            _audioSources = GetComponents<AudioSource>();
         }
 
-        var newSource = gameObject.AddComponent<AudioSource>();
-        AudioSource[] temp = new AudioSource[_audioSources.Length + 1];
-
-        for(int i = 0; i < _audioSources.Length; i++)
+        public void RequestSound(string soundName)
         {
-            temp[i] = _audioSources[i];
+            var source = ChooseUnoccupiedSource();
+            var clip = FindClip(soundName);
+            PlaySound(source, clip);
         }
-        
-        temp[temp.Length - 1] = newSource;
 
-        _audioSources = temp;
-        return newSource;
-    }
+        private AudioSource ChooseUnoccupiedSource()
+        {
+            foreach (var source in _audioSources)
+            {
+                if (!source.isPlaying) return source;
+            }
 
-    private AudioClip FindClip(string soundName)
-    {
-        _soundLibrary._soundLibraty.TryGetValue(soundName, out var clip);
-        return clip;
-    }
+            var newSource = gameObject.AddComponent<AudioSource>();
+            AudioSource[] temp = new AudioSource[_audioSources.Length + 1];
 
-    private void PlaySound(AudioSource source, AudioClip clip)
-    {
-        source.PlayOneShot(clip);
+            for(int i = 0; i < _audioSources.Length; i++)
+            {
+                temp[i] = _audioSources[i];
+            }
+            
+            temp[temp.Length - 1] = newSource;
+
+            _audioSources = temp;
+            return newSource;
+        }
+
+        private AudioClip FindClip(string soundName)
+        {
+            _soundLibrary._soundLibraty.TryGetValue(soundName, out var clip);
+            return clip;
+        }
+
+        private void PlaySound(AudioSource source, AudioClip clip)
+        {
+            source.PlayOneShot(clip);
+        }
     }
 }

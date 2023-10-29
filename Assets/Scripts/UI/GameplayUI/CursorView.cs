@@ -1,26 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CursorView : MonoBehaviour
+namespace GameplayUI
 {
-    [SerializeField] TextMeshProUGUI _text;
-    [SerializeField] RectTransform _cursor;
-    
-    public void SetInteractive(bool isInteracting)
+    public class CursorView : MonoBehaviour
     {
-        if(isInteracting)
+        [SerializeField] TextMeshProUGUI _text;
+        [SerializeField] RectTransform _cursor;
+        
+        public void SetInteractive(bool isInteracting)
         {
-            _cursor.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            if(isInteracting)
+            {
+                _cursor.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            }
+            else
+            {
+                _cursor.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            }
         }
-        else
+        public void SetText(string text)
         {
-            _cursor.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            _text.text = text;
         }
-    }
-    public void SetText(string text)
-    {
-        _text.text = text;
     }
 }

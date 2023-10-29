@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class CameraFollower : MonoBehaviour
+namespace Camera
 {
-    private Transform _cameraTransform => transform;
-    [SerializeField] private Transform _player;
-    [SerializeField] private Vector3 _cameraOffset;
-    public float SmoothTime = 0.3F;
-    
-    private void LateUpdate()
+    public class CameraFollower : MonoBehaviour
     {
-        _cameraTransform.localPosition = Vector3.Lerp(transform.localPosition, _player.localPosition + _cameraOffset, SmoothTime * Time.deltaTime);
+        private Transform _cameraTransform => transform;
+        [SerializeField] private Transform _player;
+        [SerializeField] private Vector3 _cameraOffset;
+        public float SmoothTime = 0.3F;
+        
+        private void LateUpdate()
+        {
+            _cameraTransform.localPosition = Vector3.Lerp(transform.localPosition, _player.localPosition + _cameraOffset, SmoothTime * Time.deltaTime);
+        }
     }
 }

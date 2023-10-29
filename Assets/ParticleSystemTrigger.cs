@@ -10,10 +10,12 @@ public class ParticleSystemTrigger : MonoBehaviour
         _circleParticles = GetComponent<ParticleSystem>();
 
         InvokeRepeating("EmitParticles", 0, 2);
+        
     }
 
     private void EmitParticles()
     {
         _circleParticles.Play();
+        SoundManager.Instance.RequestSound("Call");
     }
 }

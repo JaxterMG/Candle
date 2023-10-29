@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundChecker : MonoBehaviour
+namespace Player.Movement
 {
-    [SerializeField] float _radius = 0.3f;
-    [SerializeField] LayerMask _mask;
-    
-    public bool IsGrounded()
+    public class GroundChecker : MonoBehaviour
     {
-        return Physics.CheckSphere(transform.position, _radius, _mask);
-    }
-    void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, _radius);
+        [SerializeField] float _radius = 0.3f;
+        [SerializeField] LayerMask _mask;
+        
+        public bool IsGrounded()
+        {
+            return Physics.CheckSphere(transform.position, _radius, _mask);
+        }
+        void OnDrawGizmos()
+        {
+            Gizmos.DrawWireSphere(transform.position, _radius);
+        }
     }
 }

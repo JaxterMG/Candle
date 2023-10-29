@@ -1,47 +1,50 @@
 using UnityEngine;
 using Zenject;
 
-public class WalkingSoundSystem : MonoBehaviour
+namespace SoundManager
 {
-    [Inject] private SimpleControls _controls;
-    public AudioClip[] stepSounds;
-    public float stepInterval = 0.5f;
-    private AudioSource audioSource;
-
-    private int currentStepIndex = 0;
-    private float nextStepTime = 0f;
-
-    [SerializeField] private GroundChecker _groundChecker;
-    private void Start()
+    public class WalkingSoundSystem : MonoBehaviour
     {
-        audioSource = GetComponent<AudioSource>();
-    }
+        [Inject] private SimpleControls _controls;
+        public AudioClip[] stepSounds;
+        public float stepInterval = 0.5f;
+        private AudioSource audioSource;
 
-    private void Update()
-    {
-        if(!_groundChecker.IsGrounded())
-            return;
-        
-        var move = _controls.gameplay.move.ReadValue<Vector2>();
-        if (move.magnitude > 0)
+        private int currentStepIndex = 0;
+        private float nextStepTime = 0f;
+
+        [SerializeField] private GroundChecker _groundChecker;
+        private void Start()
         {
-            if (Time.time >= nextStepTime)
+            audioSource = GetComponent<AudioSource>();
+        }
+
+        private void Update()
+        {
+            if(!_groundChecker.IsGrounded())
+                return;
+            
+            var move = _controls.gameplay.move.ReadValue<Vector2>();
+            if (move.magnitude > 0)
             {
-                PlayNextStepSound();
-                nextStepTime = Time.time + stepInterval;
+                if (Time.time >= nextStepTime)
+                {
+                    PlayNextStepSound();
+                    nextStepTime = Time.time + stepInterval;
+                }
             }
         }
-    }
 
-    private void PlayNextStepSound()
-    {
-        audioSource.PlayOneShot(stepSounds[currentStepIndex]);
-
-        currentStepIndex++;
-
-        if (currentStepIndex >= stepSounds.Length)
+        private void PlayNextStepSound()
         {
-            currentStepIndex = 0;
+            audioSource.PlayOneShot(stepSounds[currentStepIndex]);
+
+            currentStepIndex++;
+
+            if (currentStepIndex >= stepSounds.Length)
+            {
+                currentStepIndex = 0;
+            }
         }
     }
 }
