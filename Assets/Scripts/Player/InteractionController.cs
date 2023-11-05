@@ -13,6 +13,7 @@ namespace Player
         [SerializeField] private Material _wallMat;
         [SerializeField] private Material _baseBoardFloorMat;
         [SerializeField] private Material _BaseBoardCeilingMat;
+        [SerializeField] private Material _doorMat;
 
         [SerializeField] private float _interactionDistance = 10;
         [SerializeField] private LayerMask _layerMask;
@@ -42,6 +43,7 @@ namespace Player
 
             _baseBoardFloorMat.SetVector("_Position", transform.position);
             _BaseBoardCeilingMat.SetVector("_Position", transform.position);
+            _doorMat.SetVector("_Position", transform.position);
             CheckForInteractiveInView();
         }
         public void CheckForInteractiveInView()

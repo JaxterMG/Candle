@@ -10303,6 +10303,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5048687175481635680, guid: 8f18b1fec9c86b246aa8aa2384592f02,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 89369a1e41eb4864b8a8f784d3e9447c, type: 2}
+    - target: {fileID: 266100936513855477, guid: 8f18b1fec9c86b246aa8aa2384592f02,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 89369a1e41eb4864b8a8f784d3e9447c, type: 2}
     - target: {fileID: 919132149155446097, guid: 8f18b1fec9c86b246aa8aa2384592f02,
         type: 3}
       propertyPath: m_Name
@@ -10328,6 +10338,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7902129040634890091, guid: 8f18b1fec9c86b246aa8aa2384592f02,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 89369a1e41eb4864b8a8f784d3e9447c, type: 2}
+    - target: {fileID: 8439796992618771461, guid: 8f18b1fec9c86b246aa8aa2384592f02,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 89369a1e41eb4864b8a8f784d3e9447c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19383,6 +19403,7 @@ MonoBehaviour:
   _baseBoardFloorMat: {fileID: 2100000, guid: e65ce5e3c5f63cf4e8f0fd19af8d5129, type: 2}
   _BaseBoardCeilingMat: {fileID: 2100000, guid: fba6ab63684dd1148bdd0cf4b9d09db6,
     type: 2}
+  _doorMat: {fileID: 2100000, guid: 89369a1e41eb4864b8a8f784d3e9447c, type: 2}
   _interactionDistance: 1.46
   _layerMask:
     serializedVersion: 2
