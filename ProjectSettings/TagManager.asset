@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - LineRenderer
   - Water
   - UI
   - Interactive
@@ -16,7 +16,7 @@ TagManager:
   - Wall
   - Player
   - Enemy
-  - 
+  - Pickable
   - 
   - 
   - 
@@ -40,4 +40,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: LineRenderer
+    uniqueID: 249195031
     locked: 0
