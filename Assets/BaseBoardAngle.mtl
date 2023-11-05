@@ -1,0 +1,24 @@
+# Blender 3.5.1 MTL File: 'BaseBoardAngle.blend'
+# www.blender.org
+
+newmtl BaseBoardWood
+Ns 223.471100
+Ka 1.000000 1.000000 1.000000
+Ks 0.595455 0.595455 0.595455
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd E:/Blender/Candle/BaseBoard/BaseBoardTexture.png
+map_d E:/Blender/Candle/BaseBoard/BaseBoardTexture.png
+map_Bump -bm 1.000000 E:/Blender/Candle/BaseBoard/BaseBoardTextureNormalMap.png
+
+newmtl BaseBoardWood.001
+Ns 223.471100
+Ka 1.000000 1.000000 1.000000
+Ks 0.595455 0.595455 0.595455
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd E:/Blender/Candle/BaseBoard/BaseBoardTexture.png
+map_d E:/Blender/Candle/BaseBoard/BaseBoardTexture.png
+map_Bump -bm 1.000000 E:/Blender/Candle/BaseBoard/BaseBoardTextureNormalMap.png

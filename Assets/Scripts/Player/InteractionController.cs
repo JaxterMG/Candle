@@ -11,6 +11,9 @@ namespace Player
     {
         [SerializeField] private Material _floorMat;
         [SerializeField] private Material _wallMat;
+        [SerializeField] private Material _baseBoardFloorMat;
+        [SerializeField] private Material _BaseBoardCeilingMat;
+
         [SerializeField] private float _interactionDistance = 10;
         [SerializeField] private LayerMask _layerMask;
         [SerializeField] private Vector3 _raycastOffset;
@@ -36,6 +39,9 @@ namespace Player
         {
             _floorMat.SetVector("_Position", transform.position);
             _wallMat.SetVector("_Position", transform.position);
+
+            _baseBoardFloorMat.SetVector("_Position", transform.position);
+            _BaseBoardCeilingMat.SetVector("_Position", transform.position);
             CheckForInteractiveInView();
         }
         public void CheckForInteractiveInView()
