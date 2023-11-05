@@ -8949,7 +8949,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 970c2a85d46be9541808ca479bcd0586, type: 2}
+  - {fileID: 2100000, guid: ae5ac2b6b0fe05d44a8023e90da6728f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15703,7 +15703,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 970c2a85d46be9541808ca479bcd0586, type: 2}
+  - {fileID: 2100000, guid: ae5ac2b6b0fe05d44a8023e90da6728f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19145,7 +19145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _floorMat: {fileID: 2100000, guid: bc4238f5d6681a043b29e577d1d3a814, type: 2}
-  _wallMat: {fileID: 2100000, guid: 970c2a85d46be9541808ca479bcd0586, type: 2}
+  _wallMat: {fileID: 2100000, guid: ae5ac2b6b0fe05d44a8023e90da6728f, type: 2}
   _baseBoardFloorMat: {fileID: 2100000, guid: e65ce5e3c5f63cf4e8f0fd19af8d5129, type: 2}
   _BaseBoardCeilingMat: {fileID: 2100000, guid: fba6ab63684dd1148bdd0cf4b9d09db6,
     type: 2}
@@ -20333,7 +20333,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 970c2a85d46be9541808ca479bcd0586, type: 2}
+  - {fileID: 2100000, guid: ae5ac2b6b0fe05d44a8023e90da6728f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
