@@ -1,5 +1,11 @@
+using UnityEngine;
+
 namespace Interactions
 {
+    public interface IRequireItem
+    {
+        public void UseItem();
+    }
     public interface IInteractive
     {
         public void Interact();
@@ -11,5 +17,7 @@ namespace Interactions
     public interface IPickable
     {
         public void OnPickUp();
+        public string GetItemName();
+        public Rigidbody GetRigidbody();
     }
 }

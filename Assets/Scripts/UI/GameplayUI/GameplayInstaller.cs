@@ -11,6 +11,7 @@ namespace GameplayUI
          Container.Bind<SimpleControls>().AsSingle();
          Container.Bind<IInventory>().To<HandInventory>().AsSingle();
          Container.Bind<InventoryController>().FromComponentInHierarchy().AsSingle();
+         Container.Bind<HandGrabber>().FromComponentInHierarchy().AsSingle();
       }
    }
 }

@@ -70,6 +70,11 @@ namespace Player
 
         public void OnInteractButtonClick(UnityEngine.InputSystem.InputAction.CallbackContext context)
         {
+            if(_currentTransform.TryGetComponent<IRequireItem>(out IRequireItem requireItemObject))
+            {
+                requireItemObject.UseItem();
+            }
+
             if(_currentTransform.TryGetComponent<IInteractive>(out IInteractive interactiveObject))
             {
                 interactiveObject.Interact();
@@ -80,9 +85,7 @@ namespace Player
                 _currentTransform.TryGetComponent<IPickable>(out IPickable pickableObject);
 
                 if(pickableObject == null) return;
-
-                _currentTransform.SetParent(_hand);
-                _inventory.TakeObject(pickableObject, _currentTransform);
+                _inventory.TakeObject(pickableObject);
             }
         }
 

@@ -6,9 +6,8 @@ namespace Player.Inventory
 {
     public class InventoryController : MonoBehaviour
     {
-        private Transform _lastItem;
-        [Inject] IInventory _inventory;
         [Inject] private SimpleControls _controls;
+        [Inject] private HandGrabber _handGrabber;
 
         void OnEnable()
         {
@@ -19,24 +18,14 @@ namespace Player.Inventory
             _controls.gameplay.Drop.performed -= DropObject;
         }
 
-        public void TakeObject(IPickable pickedObject, Transform objectTransform)
+        public void TakeObject(IPickable pickedObject)
         {
-            if (_inventory.GetObject() != null)
-            {
-                _lastItem.SetParent(null);
-                _inventory.RemoveObject();
-            }
-
-            _lastItem = objectTransform;
-            _inventory.TakeObject(pickedObject);
-            objectTransform.localPosition = Vector3.zero;
-            objectTransform.localRotation = Quaternion.Euler(Vector3.zero);
+            _handGrabber.StartGrab(pickedObject.GetRigidbody());
         }
 
         public void DropObject(UnityEngine.InputSystem.InputAction.CallbackContext context)
         {
-            _lastItem.SetParent(null);
-            _inventory.RemoveObject();
+            _handGrabber.Release();
         }
     }
 }
