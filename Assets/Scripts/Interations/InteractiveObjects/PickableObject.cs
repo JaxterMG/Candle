@@ -7,6 +7,12 @@ namespace Interactions.InteractiveObjects
         public string Name;
         protected Rigidbody _rb => GetComponent<Rigidbody>(); 
         protected Transform _transform => transform;
+
+        public GameObject GetGO()
+        {
+           return gameObject;
+        }
+
         public string GetHint()
         {
             Debug.Log($"This is {Name}");

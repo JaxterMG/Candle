@@ -55,6 +55,15 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""HideItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""b234a37c-cc03-4073-a084-e1cb9bfc6ffc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Drop"",
                     ""type"": ""Button"",
                     ""id"": ""4d945cb6-5181-4eff-9734-238be60bbaa4"",
@@ -227,6 +236,28 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf1df2f2-0ed9-45b0-9b00-beee61284085"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse + Keyboard"",
+                    ""action"": ""HideItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""955b923b-198e-4b10-8db5-79122bfcb9b0"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""HideItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -249,6 +280,7 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
         m_gameplay_move = m_gameplay.FindAction("move", throwIfNotFound: true);
         m_gameplay_look = m_gameplay.FindAction("look", throwIfNotFound: true);
         m_gameplay_Interact = m_gameplay.FindAction("Interact", throwIfNotFound: true);
+        m_gameplay_HideItem = m_gameplay.FindAction("HideItem", throwIfNotFound: true);
         m_gameplay_Drop = m_gameplay.FindAction("Drop", throwIfNotFound: true);
         m_gameplay_Jump = m_gameplay.FindAction("Jump", throwIfNotFound: true);
     }
@@ -315,6 +347,7 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_move;
     private readonly InputAction m_gameplay_look;
     private readonly InputAction m_gameplay_Interact;
+    private readonly InputAction m_gameplay_HideItem;
     private readonly InputAction m_gameplay_Drop;
     private readonly InputAction m_gameplay_Jump;
     public struct GameplayActions
@@ -324,6 +357,7 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
         public InputAction @move => m_Wrapper.m_gameplay_move;
         public InputAction @look => m_Wrapper.m_gameplay_look;
         public InputAction @Interact => m_Wrapper.m_gameplay_Interact;
+        public InputAction @HideItem => m_Wrapper.m_gameplay_HideItem;
         public InputAction @Drop => m_Wrapper.m_gameplay_Drop;
         public InputAction @Jump => m_Wrapper.m_gameplay_Jump;
         public InputActionMap Get() { return m_Wrapper.m_gameplay; }
@@ -344,6 +378,9 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @HideItem.started += instance.OnHideItem;
+            @HideItem.performed += instance.OnHideItem;
+            @HideItem.canceled += instance.OnHideItem;
             @Drop.started += instance.OnDrop;
             @Drop.performed += instance.OnDrop;
             @Drop.canceled += instance.OnDrop;
@@ -363,6 +400,9 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @HideItem.started -= instance.OnHideItem;
+            @HideItem.performed -= instance.OnHideItem;
+            @HideItem.canceled -= instance.OnHideItem;
             @Drop.started -= instance.OnDrop;
             @Drop.performed -= instance.OnDrop;
             @Drop.canceled -= instance.OnDrop;
@@ -409,6 +449,7 @@ public partial class @SimpleControls: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnHideItem(InputAction.CallbackContext context);
         void OnDrop(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
     }

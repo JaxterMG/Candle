@@ -18,6 +18,7 @@ namespace Interactions
     {
         public void OnPickUp();
         public string GetItemName();
+        public GameObject GetGO();
         public Rigidbody GetRigidbody();
     }
 }

@@ -9,7 +9,7 @@ namespace Camera
         [SerializeField] private Vector3 _cameraOffset;
         public float SmoothTime = 0.3F;
         
-        private void LateUpdate()
+        private void Update()
         {
             _cameraTransform.localPosition = Vector3.Lerp(transform.localPosition, _player.localPosition + _cameraOffset, SmoothTime * Time.deltaTime);
         }

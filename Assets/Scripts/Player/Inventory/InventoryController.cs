@@ -1,6 +1,7 @@
 using Interactions;
 using UnityEngine;
 using Zenject;
+using Zenject.SpaceFighter;
 
 namespace Player.Inventory
 {
@@ -8,6 +9,7 @@ namespace Player.Inventory
     {
         [Inject] private SimpleControls _controls;
         [Inject] private HandGrabber _handGrabber;
+        [Inject] private IInventory _inventory;
 
         void OnEnable()
         {
@@ -20,12 +22,22 @@ namespace Player.Inventory
 
         public void TakeObject(IPickable pickedObject)
         {
-            _handGrabber.StartGrab(pickedObject.GetRigidbody());
+            if(_handGrabber.CurrentItem == null)
+            {
+                _handGrabber.StartGrab(pickedObject);
+                return;
+            }
+            _inventory.TakeObject(pickedObject);
         }
 
         public void DropObject(UnityEngine.InputSystem.InputAction.CallbackContext context)
         {
-            _handGrabber.Release();
+            if(_handGrabber.CurrentItem != null)
+            {
+                _handGrabber.Release();
+                return;
+            }
+            _inventory.RemoveFirst();
         }
     }
 }

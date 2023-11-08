@@ -1,7 +1,7 @@
 
+using Interactions;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Animations.Rigging;
 
 public class HandGrabber : MonoBehaviour
 {
@@ -11,13 +11,15 @@ public class HandGrabber : MonoBehaviour
 	[SerializeField] Transform _cameraTransform;
 	[SerializeField] float _placingDistance = 1;
 	[SerializeField] LayerMask _layerMask;
-
+ 
+	public IPickable CurrentItem;
 	bool m_grabbing = false;
 
 	[Button]
-	public void StartGrab(Rigidbody rb)
-	{		
-		_rb = rb;	
+	public void StartGrab(IPickable pickable)
+	{	
+		CurrentItem = pickable;
+		_rb = pickable.GetRigidbody();	
 		_rb.isKinematic = true;
     	_rb.detectCollisions = false;
 		m_grabbing = true;
@@ -41,6 +43,7 @@ public class HandGrabber : MonoBehaviour
     	_rb.detectCollisions = true;
 		_rb.velocity = Vector3.zero;
    		_rb = null;
+		CurrentItem = null;
 	}
 
 	void Awake()
