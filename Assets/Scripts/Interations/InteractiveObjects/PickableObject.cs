@@ -8,6 +8,8 @@ namespace Interactions.InteractiveObjects
         protected Rigidbody _rb => GetComponent<Rigidbody>(); 
         protected Transform _transform => transform;
 
+        public Item SO;
+
         public GameObject GetGO()
         {
            return gameObject;
@@ -32,6 +34,16 @@ namespace Interactions.InteractiveObjects
         public virtual void OnPickUp()
         {
             Debug.Log($"{Name} Picked up");
+        }
+
+        public void SetItemName(string name)
+        {
+            Name = name;
+        }
+
+        Item IPickable.GetSO()
+        {
+            return SO;
         }
     }
 }

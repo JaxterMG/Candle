@@ -11,6 +11,11 @@ namespace Player.Inventory
         [Inject] private HandGrabber _handGrabber;
         [Inject] private IInventory _inventory;
 
+        [SerializeField] float _placingDistance = 1;
+	    [SerializeField] LayerMask _layerMask;
+
+        [SerializeField] private Transform _cameraTransform;
+
         void OnEnable()
         {
             _controls.gameplay.Drop.performed += DropObject;
@@ -23,6 +28,17 @@ namespace Player.Inventory
         public IPickable GetHandItem()
         {
             return _handGrabber.CurrentItem;
+        }
+
+        public RaycastHit GetHitInfo()
+        {
+            Ray ray = new Ray(_cameraTransform.position, _cameraTransform.forward);
+
+            RaycastHit hit;
+
+            Physics.Raycast(ray, out hit, _placingDistance, _layerMask);
+
+            return hit;
         }
 
         public void TakeObject(IPickable pickedObject)
@@ -39,10 +55,10 @@ namespace Player.Inventory
         {
             if(_handGrabber.CurrentItem != null)
             {
-                _handGrabber.Release();
+                _handGrabber.Release(GetHitInfo());
                 return;
             }
-            _inventory.RemoveFirst();
+            _inventory.RemoveFirst(GetHitInfo(), transform);
         }
     }
 }

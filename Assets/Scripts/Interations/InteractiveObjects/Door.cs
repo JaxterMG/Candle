@@ -21,8 +21,11 @@ namespace Interactions.InteractiveObjects
         public void UseItem(IPickable pickable)
         {
             if(pickable == null) return;
+
+            if(pickable.GetItemName() != RequiredItem) return;
             
-            if(pickable.GetItemName() == RequiredItem) _isUnlocked = true;
+            Debug.Log($"{pickable.GetItemName()} is used on {Name}");
+            _isUnlocked = true;
         }
 
         public void Interact()

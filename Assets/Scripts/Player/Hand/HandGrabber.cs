@@ -1,21 +1,16 @@
-
 using Interactions;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class HandGrabber : MonoBehaviour
 {
-	[SerializeField] Rigidbody _rb;
+	Rigidbody _rb;
 	[SerializeField][Range(1, 20)] float _smoothSpeed;
 	Transform m_transform;
-	[SerializeField] Transform _cameraTransform;
-	[SerializeField] float _placingDistance = 1;
-	[SerializeField] LayerMask _layerMask;
  
 	public IPickable CurrentItem;
 	bool m_grabbing = false;
 
-	[Button]
 	public void StartGrab(IPickable pickable)
 	{	
 		CurrentItem = pickable;
@@ -24,24 +19,22 @@ public class HandGrabber : MonoBehaviour
     	_rb.detectCollisions = false;
 		m_grabbing = true;
 	}
-	[Button]
-	public void Release()
+	public void Release(RaycastHit hit)
 	{
-		if(!_rb) return;
-
-		Ray ray = new Ray(_cameraTransform.position, _cameraTransform.forward);
-		if (Physics.Raycast(ray, out RaycastHit hit, _placingDistance, _layerMask))
-		{
-			_rb.transform.position = hit.point;
-			
+		_rb.velocity = Vector3.zero;
+		_rb.isKinematic = false;
+		m_grabbing = false;
+		
+		if (hit.collider != null)
+		{			
 			Quaternion rotation = Quaternion.FromToRotation(_rb.transform.up, hit.normal);
 			
-			_rb.transform.rotation = rotation * _rb.transform.rotation;
+			_rb.MoveRotation(rotation * _rb.transform.rotation);
+			_rb.MovePosition(hit.point);
 		}
-		m_grabbing = false;
-		_rb.isKinematic = false;
+		
     	_rb.detectCollisions = true;
-		_rb.velocity = Vector3.zero;
+		
    		_rb = null;
 		CurrentItem = null;
 	}

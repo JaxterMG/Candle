@@ -21,5 +21,7 @@ namespace Interactions
         public string GetItemName();
         public GameObject GetGO();
         public Rigidbody GetRigidbody();
+        public Item GetSO();
+        public void SetItemName(string name);
     }
 }

@@ -17,7 +17,6 @@ namespace Player
 
         [SerializeField] private float _interactionDistance = 10;
         [SerializeField] private LayerMask _layerMask;
-        [SerializeField] private Vector3 _raycastOffset;
         [SerializeField] private Transform _cameraTransform;
         [SerializeField] private Transform _hand;
 
