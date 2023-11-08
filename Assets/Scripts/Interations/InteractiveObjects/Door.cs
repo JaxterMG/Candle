@@ -9,20 +9,26 @@ namespace Interactions.InteractiveObjects
         public string Name;
         protected Transform _transform;
         [SerializeField] Rigidbody _doorRb;
-        [Inject] private HandGrabber _handGrabber;
+        public string RequiredItem;
+
+        private bool _isUnlocked = false;
 
         void Start()
         {
             _transform = transform;
         }
         
-        public void UseItem()
+        public void UseItem(IPickable pickable)
         {
-            //_handGrabber.
+            if(pickable == null) return;
+            
+            if(pickable.GetItemName() == RequiredItem) _isUnlocked = true;
         }
 
         public void Interact()
         {
+            if(!_isUnlocked) return;
+
             Debug.Log("Interacted");
             _doorRb.isKinematic = false;
         }
@@ -31,6 +37,11 @@ namespace Interactions.InteractiveObjects
         {
             Debug.Log($"This is {Name}");
             return Name;
+        }
+
+        public string GetRequiredName()
+        {
+            return RequiredItem;
         }
     }
 }

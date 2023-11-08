@@ -70,9 +70,11 @@ namespace Player
 
         public void OnInteractButtonClick(UnityEngine.InputSystem.InputAction.CallbackContext context)
         {
+            if(_currentTransform == null) return;
+
             if(_currentTransform.TryGetComponent<IRequireItem>(out IRequireItem requireItemObject))
             {
-                requireItemObject.UseItem();
+                requireItemObject.UseItem(_inventory.GetHandItem());
             }
 
             if(_currentTransform.TryGetComponent<IInteractive>(out IInteractive interactiveObject))

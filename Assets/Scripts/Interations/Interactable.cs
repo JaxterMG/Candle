@@ -4,7 +4,8 @@ namespace Interactions
 {
     public interface IRequireItem
     {
-        public void UseItem();
+        public void UseItem(IPickable pickable);
+        public string GetRequiredName();
     }
     public interface IInteractive
     {

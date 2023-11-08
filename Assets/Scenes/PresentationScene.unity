@@ -13000,6 +13000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Door
   _doorRb: {fileID: 842737534}
+  RequiredItem: Candle
 --- !u!1 &846562811
 GameObject:
   m_ObjectHideFlags: 0

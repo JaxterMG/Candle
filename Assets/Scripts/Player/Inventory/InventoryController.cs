@@ -20,6 +20,11 @@ namespace Player.Inventory
             _controls.gameplay.Drop.performed -= DropObject;
         }
 
+        public IPickable GetHandItem()
+        {
+            return _handGrabber.CurrentItem;
+        }
+
         public void TakeObject(IPickable pickedObject)
         {
             if(_handGrabber.CurrentItem == null)
