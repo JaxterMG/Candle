@@ -9,6 +9,9 @@ namespace Player.Inventory
     public class Inventory : IInventory
     {
         private List<Item> _pickedObjects = new List<Item>();
+
+        private InventoryController _inventoryController;
+
         public void TakeObject(IPickable pickableObject)
         {
             pickableObject?.OnPickUp();

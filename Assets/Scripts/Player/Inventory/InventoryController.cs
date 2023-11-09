@@ -1,7 +1,7 @@
+using GameplayUI.InventoryUI;
 using Interactions;
 using UnityEngine;
 using Zenject;
-using Zenject.SpaceFighter;
 
 namespace Player.Inventory
 {
@@ -10,6 +10,7 @@ namespace Player.Inventory
         [Inject] private SimpleControls _controls;
         [Inject] private HandGrabber _handGrabber;
         [Inject] private IInventory _inventory;
+        [SerializeField] private InventoryView _inventoryView;
 
         [SerializeField] float _placingDistance = 1;
 	    [SerializeField] LayerMask _layerMask;
@@ -48,6 +49,7 @@ namespace Player.Inventory
                 _handGrabber.StartGrab(pickedObject);
                 return;
             }
+            _inventoryView.SetIcon(0, pickedObject.GetSO().Sprite);
             _inventory.TakeObject(pickedObject);
         }
 
@@ -58,6 +60,7 @@ namespace Player.Inventory
                 _handGrabber.Release(GetHitInfo());
                 return;
             }
+            _inventoryView.RemoveIcon(0);
             _inventory.RemoveFirst(GetHitInfo(), transform);
         }
     }
