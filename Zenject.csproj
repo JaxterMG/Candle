@@ -246,8 +246,8 @@
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryArgumentsToChoiceBinder\FactoryArgumentsToChoiceBinder5.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Install\Contexts\GameObjectContext.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Internal\ValuePair.cs" />
-    <Compile Include="Assets\Plugins\Zenject\Source\Main\LookupId.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\Pooling\MemoryPoolBindingFinalizer.cs" />
+    <Compile Include="Assets\Plugins\Zenject\Source\Main\LookupId.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\SubContainerBinder\FactorySubContainerBinder5.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Installers\GameSignalsInstaller.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Runtime\Kernels\ProjectKernel.cs" />
@@ -322,8 +322,8 @@
     <Compile Include="Assets\Plugins\Zenject\Source\Providers\SubContainerCreators\SubContainerCreatorUtil.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\Util\HashSetPool.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Install\Contexts\SceneContext.cs" />
-    <Compile Include="Assets\Plugins\Zenject\Source\Providers\CachedProvider.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame1 (Beginner)\Scripts\Asteroid\AsteroidManager.cs" />
+    <Compile Include="Assets\Plugins\Zenject\Source\Providers\CachedProvider.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Injection\InjectUtil.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Providers\PoolableMemoryPoolProvider.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame1 (Beginner)\Scripts\Misc\TilingBackground.cs" />
@@ -366,11 +366,11 @@
     <Compile Include="Assets\Plugins\Zenject\Source\Util\ZenjectException.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame1 (Beginner)\Scripts\Ship\ShipStateFactory.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame1 (Beginner)\Scripts\Asteroid\Asteroid.cs" />
-    <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\SubContainerBinder\FactorySubContainerBinder6.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Util\ReflectionInfoTypeInfoConverter.cs" />
-    <Compile Include="Assets\Plugins\Zenject\Source\Install\Contexts\ProjectContext.cs" />
+    <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\SubContainerBinder\FactorySubContainerBinder6.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\PoolFactory.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Runtime\AnimatorInterfaces\IAnimatorMoveHandler.cs" />
+    <Compile Include="Assets\Plugins\Zenject\Source\Install\Contexts\ProjectContext.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\FactoryFromBinder2.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryArgumentsToChoiceBinder\FactoryArgumentsToChoiceBinder6.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Finalizers\IBindingFinalizer.cs" />
