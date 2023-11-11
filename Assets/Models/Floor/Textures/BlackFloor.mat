@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BlackFloor
-  m_Shader: {fileID: -6465566751694194690, guid: 647bcbff40488c14e99130ebc06ac384,
+  m_Shader: {fileID: -6465566751694194690, guid: 6c49278346df3e041b277994dbbed927,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -62,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3f621b80b5dcee644bdff135bc509d76, type: 3}
+        m_Texture: {fileID: 2800000, guid: e179523a3838cbf4da8656662402af5a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -70,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: b9e17da90fc2c584fa25416b83c9c871, type: 3}
+        m_Texture: {fileID: 2800000, guid: f97d0d28e013e324abfeb7cad82d267a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -90,7 +90,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SwapTexture:
-        m_Texture: {fileID: 2800000, guid: 8868393d65f6170479e64cb122ddf81d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 70b96cb66ba674e47bc167fd2166c806, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
