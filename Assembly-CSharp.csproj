@@ -1131,7 +1131,9 @@
     <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" />
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.csproj" />
     <ProjectReference Include="Zenject-ReflectionBaking-Editor.csproj" />
+    <ProjectReference Include="MicahW.PointGrassRenderer.Runtime.csproj" />
     <ProjectReference Include="UniRx.csproj" />
+    <ProjectReference Include="MicahW.PointGrassRenderer.Editor.csproj" />
     <ProjectReference Include="UniTask.csproj" />
     <ProjectReference Include="PrimeTween.Demo.csproj" />
     <ProjectReference Include="UniTask.TextMeshPro.csproj" />

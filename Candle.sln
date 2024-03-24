@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject-ReflectionBaking-Ed
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject-Editor", "Zenject-Editor.csproj", "{89FE191C-0142-8C6D-6F16-8F59199E9C41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicahW.PointGrassRenderer.Runtime", "MicahW.PointGrassRenderer.Runtime.csproj", "{7A0467E4-FB94-1B62-06C5-E10347A8D4E0}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeTween.Debug", "PrimeTween.Debug.csproj", "{7F54EB2B-4DB9-4CF9-B739-2E5A2DACF61E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniRx.Examples", "UniRx.Examples.csproj", "{00900C0C-A28A-25CD-8A87-D280E28E9B9E}"
@@ -34,6 +36,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenject-TestFramework", "Zenject-TestFramework.csproj", "{50358E40-DBAE-BE5F-EF1F-8ED2868CFFF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniTask.TextMeshPro", "UniTask.TextMeshPro.csproj", "{D61332AF-AB08-DA2B-67B3-FE5E75282B21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicahW.PointGrassRenderer.Editor", "MicahW.PointGrassRenderer.Editor.csproj", "{1A7276FB-11D0-BF6A-4B2D-63E5E1C625F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.Modules.UnityMathematics", "Sirenix.OdinInspector.Modules.UnityMathematics.csproj", "{C9B6CD95-BEA4-E597-E39D-62C777836AA5}"
 EndProject
@@ -101,6 +105,10 @@ Global
 		{89FE191C-0142-8C6D-6F16-8F59199E9C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89FE191C-0142-8C6D-6F16-8F59199E9C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89FE191C-0142-8C6D-6F16-8F59199E9C41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A0467E4-FB94-1B62-06C5-E10347A8D4E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A0467E4-FB94-1B62-06C5-E10347A8D4E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A0467E4-FB94-1B62-06C5-E10347A8D4E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A0467E4-FB94-1B62-06C5-E10347A8D4E0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7F54EB2B-4DB9-4CF9-B739-2E5A2DACF61E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7F54EB2B-4DB9-4CF9-B739-2E5A2DACF61E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F54EB2B-4DB9-4CF9-B739-2E5A2DACF61E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -121,6 +129,10 @@ Global
 		{D61332AF-AB08-DA2B-67B3-FE5E75282B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D61332AF-AB08-DA2B-67B3-FE5E75282B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D61332AF-AB08-DA2B-67B3-FE5E75282B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A7276FB-11D0-BF6A-4B2D-63E5E1C625F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7276FB-11D0-BF6A-4B2D-63E5E1C625F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7276FB-11D0-BF6A-4B2D-63E5E1C625F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7276FB-11D0-BF6A-4B2D-63E5E1C625F3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C9B6CD95-BEA4-E597-E39D-62C777836AA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9B6CD95-BEA4-E597-E39D-62C777836AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9B6CD95-BEA4-E597-E39D-62C777836AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
