@@ -2242,7 +2242,7 @@ Transform:
   - {fileID: 3389350453700921930}
   - {fileID: 4348285462482650877}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4925587516707731874
 PrefabInstance:
@@ -2265,7 +2265,7 @@ PrefabInstance:
     - target: {fileID: 1148235230606676375, guid: 383e9c793e0a877468e395c128df148b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 89.00002
+      value: 13.500023
       objectReference: {fileID: 0}
     - target: {fileID: 1148235230606676375, guid: 383e9c793e0a877468e395c128df148b,
         type: 3}
@@ -2311,6 +2311,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Skybox
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062442138872639065, guid: 383e9c793e0a877468e395c128df148b,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9062442138872639065, guid: 383e9c793e0a877468e395c128df148b,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 2039
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
