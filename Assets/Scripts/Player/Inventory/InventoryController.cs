@@ -19,11 +19,11 @@ namespace Player.Inventory
 
         void OnEnable()
         {
-            _controls.gameplay.Drop.performed += DropObject;
+            //_controls.gameplay.Drop.performed += DropObject;
         }
         void OnDisable()
         {
-            _controls.gameplay.Drop.performed -= DropObject;
+            //_controls.gameplay.Drop.performed -= DropObject;
         }
 
         public IPickable GetHandItem()
