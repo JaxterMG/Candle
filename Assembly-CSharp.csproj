@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\SOs\Item.cs" />
     <Compile Include="Assets\Scripts\Sky\SKYPRO_Sun_Rotator.cs" />
     <Compile Include="Assets\Scripts\UI\GameplayUI\GameplayInstaller.cs" />
+    <Compile Include="Assets\Packages\FastSky\Scripts\FastSky_Sun_Color.cs" />
     <Compile Include="Assets\Scripts\Player\Movement\PlayerStats.cs" />
     <Compile Include="Assets\Input\SimpleControls.cs" />
     <Compile Include="Assets\Scripts\Camera\HeadBob.cs" />
@@ -112,7 +113,9 @@
     <None Include="Assets\Thirdparty\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.xml" />
     <None Include="Assets\SphereRadius.shader" />
     <None Include="Assets\Thirdparty\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Packages\FastSky\DOCUMENTATION.txt" />
     <None Include="Assets\Thirdparty\Sirenix\Assemblies\NoEditor\Sirenix.Serialization.dll" />
+    <None Include="Assets\Packages\FastSky\Shaders\HLSL\CustomLighting 1.hlsl" />
     <None Include="Assets\Thirdparty\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.xml" />
     <None Include="Assets\Thirdparty\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.dll" />
     <None Include="Assets\Thirdparty\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
