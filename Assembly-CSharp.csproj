@@ -84,6 +84,9 @@
     <Compile Include="Assets\Input\SimpleControls.cs" />
     <Compile Include="Assets\Scripts\Camera\HeadBob.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory\InventoryController.cs" />
+    <Compile Include="Assets\Packages\SKYPRO\Scripts\SKYPRO_Lighting.cs" />
+    <Compile Include="Assets\Packages\SKYPRO\Shaders\SKYPRO_Renderer.cs" />
+    <Compile Include="Assets\Packages\SKYPRO\Scripts\SKYPRO_Sun_Rotator.cs" />
     <Compile Include="Assets\Scripts\UI\GameplayUI\Inventory\InventorySlot.cs" />
     <Compile Include="Assets\Scripts\Player\Movement\GroundChecker.cs" />
     <Compile Include="Assets\Thirdparty\GrabIt\Demo\Scripts\FreeCam.cs" />
@@ -101,6 +104,7 @@
     <None Include="Assets\Thirdparty\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Thirdparty\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Thirdparty\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Packages\SKYPRO\Shaders\Skybox_Proc.shader" />
     <None Include="Assets\Thirdparty\Sirenix\Assemblies\NoEmitAndNoEditor\Sirenix.Serialization.dll" />
     <None Include="Assets\Thirdparty\Sirenix\Assemblies\link.xml" />
     <None Include="Assets\Thirdparty\TextMesh Pro\Shaders\TMP_Sprite.shader" />
@@ -110,7 +114,9 @@
     <None Include="Assets\Thirdparty\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.xml" />
     <None Include="Assets\SphereRadius.shader" />
     <None Include="Assets\Thirdparty\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Packages\SKYPRO\Shaders\SKYPRO_Renderer.hlsl" />
     <None Include="Assets\Thirdparty\Sirenix\Assemblies\NoEditor\Sirenix.Serialization.dll" />
+    <None Include="Assets\Packages\SKYPRO\DOCUMENTATION.txt" />
     <None Include="Assets\Thirdparty\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.xml" />
     <None Include="Assets\Thirdparty\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.dll" />
     <None Include="Assets\Thirdparty\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
@@ -124,6 +130,7 @@
     <None Include="Assets\Thirdparty\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Thirdparty\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Thirdparty\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\Packages\SKYPRO\Shaders\Scene_Lights\Scene_Lights_SKYPRO.hlsl" />
     <None Include="Assets\Thirdparty\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\Thirdparty\Sirenix\Assemblies\Sirenix.Utilities.Editor.xml" />
     <None Include="Assets\Thirdparty\Sirenix\Assemblies\Sirenix.Utilities.Editor.dll" />
@@ -513,6 +520,10 @@
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
       <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
@@ -1130,6 +1141,8 @@
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj" />
     <ProjectReference Include="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" />
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.csproj" />
+    <ProjectReference Include="BlockadeLabsSDK.Editor.csproj" />
+    <ProjectReference Include="BlockadeLabsSDK.Runtime.csproj" />
     <ProjectReference Include="Zenject-ReflectionBaking-Editor.csproj" />
     <ProjectReference Include="MicahW.PointGrassRenderer.Runtime.csproj" />
     <ProjectReference Include="UniRx.csproj" />
